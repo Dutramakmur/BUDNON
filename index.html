@@ -1,0 +1,580 @@
+<style>
+    .cc_banner-wrapper {
+  z-index: 9001;
+  position: relative
+}
+
+.cc_container .cc_btn {
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.6em;
+  transition: font-size 200ms;
+  line-height: 1em
+}
+
+.cc_container .cc_message {
+  font-size: 0.6em;
+  transition: font-size 200ms;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em
+}
+
+.cc_container .cc_logo {
+  display: none;
+  text-indent: -1000px;
+  overflow: hidden;
+  width: 100px;
+  height: 22px;
+  background-size: cover;
+  background-image: url(//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/logo.png);
+  opacity: 0.9;
+  transition: opacity 200ms
+}
+
+.cc_container .cc_logo:hover,
+.cc_container .cc_logo:active {
+  opacity: 1
+}
+
+@media screen and (min-width: 500px) {
+  .cc_container .cc_btn {
+    font-size: 0.8em
+  }
+  .cc_container .cc_message {
+    font-size: 0.8em
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cc_container .cc_btn {
+    font-size: 1em
+  }
+  .cc_container .cc_message {
+    font-size: 1em;
+    line-height: 1em
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cc_container .cc_message {
+    font-size: 1em
+  }
+}
+
+@media print {
+  .cc_banner-wrapper,
+  .cc_container {
+    display: none
+  }
+}
+
+.cc_container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 10px
+}
+
+.cc_container .cc_btn {
+  padding: 8px 10px;
+  background-color: #f1d600;
+  cursor: pointer;
+  transition: font-size 200ms;
+  text-align: center;
+  font-size: 0.6em;
+  display: block;
+  width: 33%;
+  margin-left: 10px;
+  float: right;
+  max-width: 120px
+}
+
+.cc_container .cc_message {
+  transition: font-size 200ms;
+  font-size: 0.6em;
+  display: block
+}
+
+@media screen and (min-width: 500px) {
+  .cc_container .cc_btn {
+    font-size: 0.8em
+  }
+  .cc_container .cc_message {
+    margin-top: 0.5em;
+    font-size: 0.8em
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cc_container {
+    padding: 15px 30px 15px
+  }
+  .cc_container .cc_btn {
+    font-size: 1em;
+    padding: 8px 15px
+  }
+  .cc_container .cc_message {
+    font-size: 1em
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cc_container .cc_message {
+    font-size: 1em
+  }
+}
+
+.cc_container {
+  background: #222;
+  color: #fff;
+  font-size: 17px;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  box-sizing: border-box
+}
+
+.cc_container::-moz-selection {
+  background: #ff5e99;
+  color: #fff;
+  text-shadow: none
+}
+
+.cc_container .cc_btn,
+.cc_container .cc_btn:visited {
+  color: #000;
+  background-color: #f1d600;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  border-radius: 5px;
+  -webkit-border-radius: 5px
+}
+
+.cc_container .cc_btn:hover,
+.cc_container .cc_btn:active {
+  background-color: #fff;
+  color: #000
+}
+
+.cc_container a,
+.cc_container a:visited {
+  text-decoration: none;
+  color: #31a8f0;
+  transition: 200ms color
+}
+
+.cc_container a:hover,
+.cc_container a:active {
+  color: #b2f7ff
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(66px);
+    transform: translateY(66px)
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(66px);
+    -ms-transform: translateY(66px);
+    transform: translateY(66px)
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+.cc_container,
+.cc_message,
+.cc_btn {
+  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-duration: 0.8s;
+  -o-animation-duration: 0.8s;
+  -webkit-animation-name: slideUp;
+  animation-name: slideUp
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDNON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="budget-container">
+        <div class="app-title">
+        </div>
+        <div class="budget-header">
+            <div class="balance">
+                <div class="title">
+                    <br><br>
+                    SISA UANG  <b>MADE BY NONKUY
+                </div>
+                <div class="value">
+                    <small>Rp</small>0
+                </div>
+            </div>
+            <div class="account">
+                <div class="income">
+                    <div class="title">
+                        PEMASUKKAN
+                    </div>
+                    <div class="income-total">
+                        <small>Rp</small>0
+                    </div>
+                </div>
+                <div class="chart"></div>
+                <div class="outcome">
+                    <div class="title">
+                        PENGELUARAN
+                    </div>
+                    <div class="outcome-total">
+                        <small>Rp</small>0
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="budget-dashboard">
+            <div class="dash-title">Dashboard</div>
+            <div class="toggle">
+                <div class="tab1">PENGELUARAN</div>
+                <div class="tab2">PEMASUKKAN</div>
+                <div class="tab3 active">All</div>
+            </div>
+            <div class="hide" id="income">
+                <ul class="list"></ul>
+                <div class="input">
+                    <input type="text" id="income-title-input" name="title" placeholder="Title">
+                    <input type="number" id="income-amount-input" name="amount" placeholder="Rp0">
+                    <div class="add-income"><img src="icon/plus.png" alt=""></div>
+                </div>
+            </div>
+            <div class="hide" id="expense">
+                <ul class="list"></ul>
+                <div class="input">
+                    <input type="text" id="expense-title-input" name="title" placeholder="Title">
+                    <input type="number" id="expense-amount-input" name="amount" placeholder="Rp0">
+                    <div class="add-expense"><img src="icon/plus.png" alt=""></div>
+                </div>
+            </div>
+            <div id="all">
+                <ul class="list"></ul>
+            </div>
+        </div>
+    </div>
+<div class="cc_banner-wrapper ">
+  <div class="cc_banner cc_container cc_container--open"><a href="https://instagram.com/nonkuy_id?igshid=haipckxtw63n" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">Follow!</a>
+    <p class="cc_message">FOLLOW MY SOSMED</p>
+  </div>
+</div>
+    <script src="chart.js"></script>
+<style>
+    *{margin: 0; padding: 0}
+@keyframes autopopup {
+    from {opacity: 0;margin-top:-200px;}
+    to {opacity: 1;}
+}
+#close {
+    background-color: rgba(64, 68, 65, 0.5);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    animation: autopopup 3.5s;
+}
+#close:target {
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+    transition:all 1s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media only screen and (min-width: 600px){
+    .container-popup {
+        width:35%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .container-popup {
+        width:50%;
+    }
+}
+.container-popup {
+    position: relative;
+    margin: 200px 50px;
+    padding: 0px 0px;
+    background-color: #e1fff5;
+    color: #333;
+    border-radius: 0px;
+}
+.container-popup img {
+    width: 150%
+}
+.close {
+    position: absolute;
+    top:3px;
+    right:-85px;
+    background-color: #33898B;
+    padding:7px 10px;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 1;
+    color:#fff;
+}
+</style>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<article>
+</article>
+
+<!-- start popup -->
+    <div id="close">
+        <div class="container-popup">
+            <form action="g" method="post" class="popup-form">
+                <a href="#null"><img src="welcome.png" alt="">
+            </form>
+            <a class="close" href="#close">close</a>
+            
+        </div>
+    </div>
+<!-- end popup -->
+<script>
+    /* www.youtube.com/CodeExplained */
+
+// SELECT ELEMENTS
+const balanceEl = document.querySelector(".balance .value");
+const incomeTotalEl = document.querySelector(".income-total");
+const outcomeTotalEl = document.querySelector(".outcome-total");
+const incomeEl = document.querySelector("#income");
+const expenseEl = document.querySelector("#expense");
+const allEl = document.querySelector("#all");
+const incomeList = document.querySelector("#income .list");
+const expenseList = document.querySelector("#expense .list");
+const allList = document.querySelector("#all .list");
+
+// SELECT BTNS
+const expenseBtn = document.querySelector(".tab1");
+const incomeBtn = document.querySelector(".tab2");
+const allBtn = document.querySelector(".tab3");
+
+// INPUT BTS
+const addExpense = document.querySelector(".add-expense");
+const expenseTitle = document.getElementById("expense-title-input");
+const expenseAmount = document.getElementById("expense-amount-input");
+
+const addIncome = document.querySelector(".add-income");
+const incomeTitle = document.getElementById("income-title-input");
+const incomeAmount = document.getElementById("income-amount-input");
+
+// VARIABLES
+let ENTRY_LIST;
+let balance = 0, income = 0, outcome = 0;
+const DELETE = "delete", EDIT = "edit";
+
+// LOOK IF THERE IS SAVED DATA IN LOCALSTORAGE
+ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
+updateUI();
+
+// EVENT LISTENERS
+expenseBtn.addEventListener("click", function(){
+    show(expenseEl);
+    hide( [incomeEl, allEl] );
+    active( expenseBtn );
+    inactive( [incomeBtn, allBtn] );
+})
+incomeBtn.addEventListener("click", function(){
+    show(incomeEl);
+    hide( [expenseEl, allEl] );
+    active( incomeBtn );
+    inactive( [expenseBtn, allBtn] );
+})
+allBtn.addEventListener("click", function(){
+    show(allEl);
+    hide( [incomeEl, expenseEl] );
+    active( allBtn );
+    inactive( [incomeBtn, expenseBtn] );
+})
+
+addExpense.addEventListener("click", function(){
+    // IF ONE OF THE INPUTS IS EMPTY => EXIT
+    if(!expenseTitle.value || !expenseAmount.value ) return;
+
+    // SAVE THE ENTRY TO ENTRY_LIST
+    let expense = {
+        type : "expense",
+        title : expenseTitle.value,
+        amount : parseInt(expenseAmount.value)
+    }
+    ENTRY_LIST.push(expense);
+
+    updateUI();
+    clearInput( [expenseTitle, expenseAmount] )
+})
+
+addIncome.addEventListener("click", function(){
+    // IF ONE OF THE INPUTS IS EMPTY => EXIT
+    if(!incomeTitle.value || !incomeAmount.value ) return;
+
+    // SAVE THE ENTRY TO ENTRY_LIST
+    let income = {
+        type : "income",
+        title : incomeTitle.value,
+        amount : parseInt(incomeAmount.value)
+    }
+    ENTRY_LIST.push(income);
+
+    updateUI();
+    clearInput( [incomeTitle, incomeAmount] )
+})
+
+incomeList.addEventListener("click", deleteOrEdit);
+expenseList.addEventListener("click", deleteOrEdit);
+allList.addEventListener("click", deleteOrEdit);
+
+// HELPERS
+
+function deleteOrEdit(event){
+    const targetBtn = event.target;
+
+    const entry = targetBtn.parentNode;
+
+    if( targetBtn.id == DELETE ){
+        deleteEntry(entry);
+    }else if(targetBtn.id == EDIT ){
+        editEntry(entry);
+    }
+}
+
+function deleteEntry(entry){
+    ENTRY_LIST.splice( entry.id, 1);
+
+    updateUI();
+}
+
+function editEntry(entry){
+    console.log(entry)
+    let ENTRY = ENTRY_LIST[entry.id];
+
+    if(ENTRY.type == "income"){
+        incomeAmount.value = ENTRY.amount;
+        incomeTitle.value = ENTRY.title;
+    }else if(ENTRY.type == "expense"){
+        expenseAmount.value = ENTRY.amount;
+        expenseTitle.value = ENTRY.title;
+    }
+
+    deleteEntry(entry);
+}
+
+function updateUI(){
+    income = calculateTotal("income", ENTRY_LIST);
+    outcome = calculateTotal("expense", ENTRY_LIST);
+    balance = Math.abs(calculateBalance(income, outcome));
+
+    // DETERMINE SIGN OF BALANCE
+    let sign = (income >= outcome) ? "Rp" : "-Rp";
+
+    // UPDATE UI
+    balanceEl.innerHTML = `<small>${sign}</small>${balance}`;
+    outcomeTotalEl.innerHTML = `<small>Rp</small>${outcome}`;
+    incomeTotalEl.innerHTML = `<small>Rp</small>${income}`;
+
+    clearElement( [expenseList, incomeList, allList] );
+
+    ENTRY_LIST.forEach( (entry, index) => {
+        if( entry.type == "expense" ){
+            showEntry(expenseList, entry.type, entry.title, entry.amount, index)
+        }else if( entry.type == "income" ){
+            showEntry(incomeList, entry.type, entry.title, entry.amount, index)
+        }
+        showEntry(allList, entry.type, entry.title, entry.amount, index)
+    });
+
+    updateChart(income, outcome);
+
+    localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
+}
+
+function showEntry(list, type, title, amount, id){
+
+    const entry = ` <li id = "${id}" class="${type}">
+                        <div class="entry">${title}: Rp.${amount}</div>
+                        <div id="edit"></div>
+                        <div id="delete"></div>
+                    </li>`;
+
+    const position = "afterbegin";
+
+    list.insertAdjacentHTML(position, entry);
+}
+
+function clearElement(elements){
+    elements.forEach( element => {
+        element.innerHTML = "";
+    })
+}
+
+function calculateTotal(type, list){
+    let sum = 0;
+
+    list.forEach( entry => {
+        if( entry.type == type ){
+            sum += entry.amount;
+        }
+    })
+
+    return sum;
+}
+
+function calculateBalance(income, outcome){
+    return income - outcome;
+}
+
+function clearInput(inputs){
+    inputs.forEach( input => {
+        input.value = "";
+    })
+}
+function show(element){
+    element.classList.remove("hide");
+}
+
+function hide( elements ){
+    elements.forEach( element => {
+        element.classList.add("hide");
+    })
+}
+
+function active(element){
+    element.classList.add("active");
+}
+
+function inactive( elements ){
+    elements.forEach( element => {
+        element.classList.remove("active");
+    })
+}
+</script>
+</body>
+</html>
